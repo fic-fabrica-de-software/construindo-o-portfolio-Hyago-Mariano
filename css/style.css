@@ -1,13 +1,50 @@
-*{
+* {
     font-family: "Moul", serif;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    
-}
-#navbar ul {
-    background-color: red;
-    list-style: none;
+
 }
 
+
+#navbar ul li {
+    display: flex;
+    margin: 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#navbar ul {
+    display: flex;
+
+}
+
+#navbar .Icons img {
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.imagens #rosto {
+    max-width: center;
+    background-color: red;
+}
+
+.imagens #lados .direito {
+
+    float: right;
+    padding: 0px;
+    margin: 0px;
+}
+
+.imagens #lados .esquerdo {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+}
