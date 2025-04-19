@@ -2,9 +2,23 @@
     font-family: "Moul", serif;
     box-sizing: border-box;
     text-decoration: none;
-
+    /* background-color: #F0B722; */
 }
 
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F0B722; /* fundo amarelo */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 0 0 auto; /* Header não cresce nem diminui */
+}
 
 #navbar ul li {
     display: flex;
@@ -25,26 +39,79 @@
 }
 
 
-.imagens #rosto {
-    max-width: center;
-    background-color: red;
+
+
+main {
+    flex: 1 0 auto; /* Main ocupa o resto da tela */
+    position: relative;
 }
 
-.imagens #lados .direito {
-
-    float: right;
-    padding: 0px;
-    margin: 0px;
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.imagens #lados .esquerdo {
-    float: left;
-    padding: 0px;
-    margin: 0px;
+#rosto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+#rosto img {
+    width: 400px;
+    height: auto;
+}
 
+.esquerdo, .direito {
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    height: auto ;
+    transition: opacity 0.5s ease;
+}
+
+.esquerdo {
+    left: 0;
+    transform: scaleX(-1); /* Espelha a imagem */
+}
+
+.direito {
+    right: 0;
+}
+
+.esquerdo img, .direito img {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    #rosto img {
+        width: 180px;
+        
+    }
+    
+    .esquerdo, .direito {
+        width: 120px;
+        display:none;
+        opacity: 0;
+    }
+
+    #navbar ul li {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #rosto img {
+        width: 140px;
+    }
+
+    .esquerdo, .direito {
+        width: 100px;
+    }
 }
