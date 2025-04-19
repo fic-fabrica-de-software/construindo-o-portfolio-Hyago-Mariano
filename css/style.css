@@ -2,15 +2,15 @@
     font-family: "Moul", serif;
     box-sizing: border-box;
     text-decoration: none;
-    /* background-color: #F0B722; */
+    color:black;
 }
 
 
 body, html {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #F0B722; /* fundo amarelo */
+    background-color: #F0B722; 
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -25,21 +25,32 @@ header {
     margin: 20px;
     box-sizing: border-box;
     text-decoration: none;
+    font-size: 30px;
+
+}
+
+#navbar {
+    background-color: #FFA506;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 #navbar ul {
     display: flex;
-
+    gap: 10px;
 }
 
-#navbar .Icons img {
-    width: 30px;
-    justify-content: center;
-    align-items: center;
+#navbar .Icons{
+    display: flex;
+    gap: 20px;
 }
 
-
-
+#navbar .Icons img {  /* tamanhos dos icones */
+    width: 50px;
+    height: 50px;
+}
 
 main {
     flex: 1 0 auto; /* Main ocupa o resto da tela */
@@ -60,14 +71,14 @@ main {
 }
 
 #rosto img {
-    width: 400px;
+    width: 400px;  /* tamanho da imagem de centro */
     height: auto;
 }
 
 .esquerdo, .direito {
     position: absolute;
     bottom: 0;
-    width: 400px;
+    width: 400px;  /* tamanho das imagens laterais */
     height: auto ;
     transition: opacity 0.5s ease;
 }
@@ -113,5 +124,6 @@ main {
 
     .esquerdo, .direito {
         width: 100px;
+        pointer-events: none;
     }
 }
