@@ -1,11 +1,12 @@
 #navbar {
-    background-color: #FFA506;
+    /* background-color: #FFA506; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     padding: 0 20px;
     height: 80px;
     /* Define altura fixa pra navbar */
+    position: relative;
 }
 
 
@@ -48,28 +49,42 @@ header {
 
 #navbar ul {
     list-style: none;
-    /* Tira bolinhas da lista */
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente */
+    gap: 30px;
+    margin: 0;
+    padding: 0;
     height: 100%;
-    /* Ocupa toda a altura da navbar */
+}
+
+/* #navbar ul {
+    list-style: none;
+    /* Tira bolinhas da lista 
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente 
+    height: 100%;
+    /* Ocupa toda a altura da navbar 
     margin: 0;
     padding: 0;
     gap: 20px;
-}
+} */
 
 #navbar .Icons {
+    position: absolute;
     display: flex;
-    gap: 20px;
+    right: 20px;
+    gap: 1px;
     align-items: center;
     /* Centraliza ícones também */
+
+    transition:all 0.3s ease;
 }
 
 #navbar .Icons img {
     /* tamanhos dos icones */
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 main {
@@ -131,12 +146,23 @@ main {
 
     }
 
-    .esquerdo,
+/*     .esquerdo,
     .direito {
         width: 120px;
         display: none;
+        transition: opacity 0.05s ease;
         opacity: 0;
-    }
+    } */
+
+    .esquerdo,
+.direito {
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    height: auto;
+    opacity: 1; /* visível */
+    transition: opacity 0.5s ease; /* animação de opacidade */
+}
 
     #navbar ul li {
         opacity: 0;
@@ -144,14 +170,42 @@ main {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 707px) {
     #rosto img {
         width: 140px;
     }
-
+/* 
     .esquerdo,
     .direito {
         width: 100px;
         pointer-events: none;
+    } */
+
+    .esquerdo,
+    .direito {
+        width: 120px; /* Reduz largura */
+        opacity: 0; /* Fade-out */
+        pointer-events: none; /* Não clica */
+        /* Tira display:none daqui! */
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar .Icons {
+        position: static; /* Tira o absolute */
+        margin-top: 10px;
+        justify-content: center;
+
+    }
+
+    #navbar {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    #navbar ul {
+        margin-top: 10px;
     }
 }
