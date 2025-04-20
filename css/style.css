@@ -1,41 +1,36 @@
-* {
-    font-family: "Moul", serif;
-    box-sizing: border-box;
-    text-decoration: none;
-    color:black;
-}
-
-
-body, html {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #F0B722; 
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    flex: 0 0 auto; /* Header não cresce nem diminui */
-}
-
-#navbar ul li {
-    display: flex;
-    margin: 20px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-size: 30px;
-
-}
-
 #navbar {
     background-color: #FFA506;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    height: 80px;
+    /* Define altura fixa pra navbar */
 }
+
+
+
+body,html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #F0B722;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 0 0 auto;
+    /* Header não cresce nem diminui */
+}
+
+#navbar ul li {
+    margin: 0;
+    /* Limpa margin */
+}
+
+
 
 #navbar a {
     font-family: "Moul", serif;
@@ -44,27 +39,42 @@ header {
     font-size: 30px;
     display: flex;
     align-items: center;
+    height: 100%;
+    /* Faz o link ocupar a altura toda */
+    padding: 0 15px;
+    /* Espaçamento lateral dos links */
 }
 
 
 #navbar ul {
-
+    list-style: none;
+    /* Tira bolinhas da lista */
     display: flex;
-    gap: 10px;
-}
-
-#navbar .Icons{
-    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100%;
+    /* Ocupa toda a altura da navbar */
+    margin: 0;
+    padding: 0;
     gap: 20px;
 }
 
-#navbar .Icons img {  /* tamanhos dos icones */
+#navbar .Icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    /* Centraliza ícones também */
+}
+
+#navbar .Icons img {
+    /* tamanhos dos icones */
     width: 50px;
     height: 50px;
 }
 
 main {
-    flex: 1 0 auto; /* Main ocupa o resto da tela */
+    flex: 1 0 auto;
+    /* Main ocupa o resto da tela */
     position: relative;
 }
 
@@ -82,28 +92,33 @@ main {
 }
 
 #rosto img {
-    width: 400px;  /* tamanho da imagem de centro */
+    width: 400px;
+    /* tamanho da imagem de centro */
     height: auto;
 }
 
-.esquerdo, .direito {
+.esquerdo,
+.direito {
     position: absolute;
     bottom: 0;
-    width: 400px;  /* tamanho das imagens laterais */
-    height: auto ;
+    width: 400px;
+    /* tamanho das imagens laterais */
+    height: auto;
     transition: opacity 0.5s ease;
 }
 
 .esquerdo {
     left: 0;
-    transform: scaleX(-1); /* Espelha a imagem */
+    transform: scaleX(-1);
+    /* Espelha a imagem */
 }
 
 .direito {
     right: 0;
 }
 
-.esquerdo img, .direito img {
+.esquerdo img,
+.direito img {
     width: 100%;
     height: auto;
 }
@@ -113,12 +128,13 @@ main {
 @media (max-width: 768px) {
     #rosto img {
         width: 180px;
-        
+
     }
-    
-    .esquerdo, .direito {
+
+    .esquerdo,
+    .direito {
         width: 120px;
-        display:none;
+        display: none;
         opacity: 0;
     }
 
@@ -133,7 +149,8 @@ main {
         width: 140px;
     }
 
-    .esquerdo, .direito {
+    .esquerdo,
+    .direito {
         width: 100px;
         pointer-events: none;
     }
