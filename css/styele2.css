@@ -1,69 +1,132 @@
 * {
-    font-family: "Moul", serif;
+    font-family: "League Gothic", sans-serif;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "League Gothic", sans-serif;
     margin: 0;
     padding: 0;
+}
+
+/* O fundo da página */
+body {
     background-color: #F0B722;
 }
 
-#foto {
-    float: left;
-    height: 100vh;
+/* Deixa o SVG fixo na esquerda */
+#container svg {
     position: fixed;
-
-
-
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    z-index: 0;
 }
 
-#container {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Altura total da tela */
-    width: 100vw; /* Largura total da tela */
-    overflow-x: hidden; /* Evita rolagem horizontal */
-    overflow-y: hidden;
-}
-
-#container .txt p {
+/* Configura a seta */
+#container .seta {
+    width: 50px;
+    height: 50px;
     position: fixed;
     top: 50%;
-    left: 60%; /* Ajuste essa distância para alinhar melhor */
-    transform: translateY(-50%);
-    
-    width: 40%; /* opcional para limitar o tamanho do texto */
-    text-align: left;
+    left: 70px;
+    transform: translate(-50%) scaleX(-1);
+    cursor: pointer;
+    z-index: 2;
 
 }
 
+/* Foto de rosto */
 #container .rosto {
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    position: fixed;
+    top: 55%;
+    left: 150px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+/* O texto */
+#container .txt p {
+    position: fixed;
+    top: 55%;
+    left: 60%;
+    transform: translateY(-50%);
+    width: 40%;
+    text-align: right;
+    padding-right: 30px;
+    font-size: 30px;
+    z-index: 2;
+}
+
+/* Hyago - JAZZ */
+
+#container .nome {
+
 
     position: fixed;
     top: 55%;
-    left: 200px;
+    /* Mesma altura vertical da .rosto */
+    left: 420px;
+    /* Aproximadamente depois da foto (ajustável) */
     transform: translateY(-50%);
-
-
-
+    /* Centraliza certinho na linha */
+    width: 280px;
+    height: auto;
+    /* Deixa altura automática pra manter a proporção */
+    z-index: 2;
+    /* Igual a .rosto pra ficar tudo em cima */
 }
 
-#container .seta {
-    width: 50px;
-    height: 50px;
-    /* Ajuste o tamanho da seta conforme necessário */
+@media (max-width:1168px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 40px 20px;
+        height: auto;
+    }
 
-    position: fixed;
-    top: 50%;
-    left: 120px;
-    transform: translate(-50%);
+    #container .seta {
+        position: static;
+        width: 50px;
+        height: 50px;
+        transform: scaleX(-1);
+        margin-bottom: 20px;
+    }
 
-    cursor: pointer;
+    #container .rosto {
+        position: static;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
 
+    #container .nome {
+        position: static;
+        width: 200px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #container .txt {
+        position: static;
+        
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container .txt p {
+        position: static;
+        font-size: 18px;
+        text-align: center;
+        width: 80%;
+        margin-top: 20px;  /* Adicionando margem superior para espaçar do nome */
+        margin-left:50px;
+    }
 }
